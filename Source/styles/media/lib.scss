@@ -1,0 +1,44 @@
+$xxs: 414px;
+$xxs-max: $xxs - 1;
+
+$xs: 568px;
+$xs-max: $xs - 1;
+
+$sm: 768px;
+$sm-max: $sm - 1;
+
+$md: 992px;
+$md-max: $md - 1;
+
+$lg: 1200px;
+$lg-max: $lg - 1;
+
+//Media Varaible Usage: @media(min-width: $var){ } or @media(max-width: $var-max){ }
+$breakpoints: ('xs': $xs, 'sm': $sm, 'md': $md, 'lg': $lg);
+
+$num-cols: 12;
+$gutter: 15px;
+
+$bp: "Placeholder Variable: For use in 'breakpoints' mixin." !global;
+$bp-suffix: "Placeholder Variable: For use in 'breakpoints' mixin." !global;
+
+// Creates styles with media suffixes (flex-row-xxl, flex-row-xl, ... , flex-row-xs)
+@mixin breakpoints { 
+  $bp: 0 !global;
+  $bp-suffix: "" !global;
+  @content;
+
+  @each $key, $breakpoint in $breakpoints {
+    $bp: $breakpoint !global;
+    $bp-suffix: "-" + $key !global;
+
+    @media (min-width: $bp) {
+      &#{$bp-suffix} {
+        @content;
+      }
+    }
+  }
+
+  $bp: "Placeholder Variable: For use in 'breakpoints' mixin." !global;
+  $bp-suffix: "Placeholder Variable: For use in 'breakpoints' mixin." !global;
+}

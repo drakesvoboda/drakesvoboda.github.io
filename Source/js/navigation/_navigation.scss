@@ -1,0 +1,36 @@
+﻿$color: #eee;
+
+$mobile-nav-animation-length: 500;
+$mobile-nav-animation-length-ms: $mobile-nav-animation-length + 0ms;
+
+:export {
+  animationMillis: $mobile-nav-animation-length;
+}
+
+#site, #main-content {
+  position: relative;
+}
+
+#site {
+  background-color: $color;
+  z-index: 3;
+  overflow: hidden;
+}
+
+#main-content {
+  background-color: #fff;
+  top: 0;
+  left: 0;
+}
+
+.mobile-nav-sliding {
+  #main-content, .sb-slide {
+    transition: transform $mobile-nav-animation-length-ms !important;
+  }
+}
+
+.mobile-nav-sliding, .mobile-nav-expanded {
+  .sb-slide {
+    transform-origin: 0 0 0;
+  }
+}

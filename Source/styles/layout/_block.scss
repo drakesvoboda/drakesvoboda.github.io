@@ -1,0 +1,93 @@
+@import "../media/lib";
+@import "../color/lib";
+@import "lib";
+
+@mixin padding-tblr($value) {
+  &-top {
+    padding-top: $value;
+  }
+
+  &-bottom {
+    padding-bottom: $value;
+  }
+
+  &-left {
+    padding-left: $value;
+  }
+
+  &-right {
+    padding-right: $value;
+  }
+}
+
+@mixin margin-tblr($value) {
+  &-top {
+    margin-top: $value;
+  }
+
+  &-bottom {
+    margin-bottom: $value;
+  }
+
+  &-left {
+    margin-left: $value;
+  }
+
+  &-right {
+    margin-right: $value;
+  }
+}
+
+.block {
+  @include breakpoints {
+    @include blocks {
+      padding: $block-size;
+    }
+
+    @include blocks {
+      @include padding-tblr($block-size);
+    }
+
+    &-margin {
+      @include blocks {
+        margin: $block-size;
+      }
+
+      @include blocks {
+        @include margin-tblr($block-size);
+      }
+    }
+  }
+}
+
+.banner {
+  @include breakpoints {
+    @include blocks {
+      @extend .block#{$bp-suffix}#{$block-suffix}-top;
+      @extend .block#{$bp-suffix}#{$block-suffix}-bottom;
+
+      &-top {
+        @extend .block#{$bp-suffix}#{$block-suffix}-top;
+      }
+
+      &-bottom {
+        @extend .block#{$bp-suffix}#{$block-suffix}-bottom;
+      }
+    }
+
+    &-margin {
+      @include blocks {
+        @extend .block#{$bp-suffix}-margin#{$block-suffix}-top;
+        @extend .block#{$bp-suffix}-margin#{$block-suffix}-bottom;
+
+        &-top {
+          @extend .block#{$bp-suffix}-margin#{$block-suffix}-top;
+        }
+
+        &-bottom {
+          @extend .block#{$bp-suffix}-margin#{$block-suffix}-bottom;
+        }
+      }
+    }
+  }
+}

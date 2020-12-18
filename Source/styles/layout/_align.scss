@@ -1,0 +1,77 @@
+@import "../media/lib";
+
+.align {
+  &-self {
+    &-start {
+      align-self: flex-start;
+    }
+
+    &-center {
+      align-self: center;
+    }
+
+    &-end {
+      align-self: flex-end;
+    }
+
+    &-baseline {
+      align-self: baseline;
+    }
+  }
+
+  &-items {
+    @include breakpoints {
+      &-start {
+        align-items: flex-start;
+      }
+
+      &-center {
+        align-items: center;
+      }
+
+      &-end {
+        align-items: flex-end;
+      }
+
+      &-baseline {
+        align-items: baseline;
+      }
+    }
+  }
+}
+
+.justify-content {
+  @include breakpoints {
+    &-start {
+      justify-content: flex-start;
+    }
+
+    &-end {
+      justify-content: flex-end;
+    }
+
+    &-center {
+      justify-content: center;
+    }
+  }
+}
+
+.flex {
+  @include breakpoints {
+    &-nowrap {
+      flex-wrap: nowrap;
+    }
+
+    &-wrap {
+      flex-wrap: wrap;
+    }
+
+    &-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+  }
+}
+
+.flex-auto {
+    flex: 0 1 auto;
+}

@@ -1,0 +1,79 @@
+﻿@import "../util/lib";
+@import "../media/lib";
+
+$animation-delay: 200ms;
+
+.animate {
+  &--fade-up {
+    transition: transform 1.6s cubic-bezier(0.21, 0.32, 0.18, 0.92), opacity 1s;
+    transform: translate(0, 4rem);
+    opacity: 0;
+
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+
+    @include loading {
+      transform: translate(0, 4rem);
+      opacity: 0;
+    }
+  }
+
+  &--fade-down {
+    transition: transform 1.6s cubic-bezier(0.21, 0.32, 0.18, 0.92), opacity 1s;
+    transform: translate(0, -4rem);
+    opacity: 0;
+
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+
+    @include loading {
+      transform: translate(0, -4rem);
+      opacity: 0;
+    }
+  }
+
+  &--fade-in {
+    transition: opacity 1s;
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
+
+    @include loading {
+      opacity: 0;
+    }
+  }
+
+  &--delay {
+    @for $i from 1 through 7 {
+      &-#{$i} {
+        transition-delay: $animation-delay * $i !important;
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

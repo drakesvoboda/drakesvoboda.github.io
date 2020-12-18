@@ -1,0 +1,61 @@
+﻿@import "../type/lib";
+
+$side-bar-width: 93px;
+
+$block: pxtoem(100);
+
+$block-large: $block * 1.5;
+$block-medium: $block * 0.75;
+$block-small: $block * 0.5;
+
+$gutter: 56px / 2;
+
+$block-sizes: ("none": 0px, "gutter": $gutter, "small": $block-small, "medium": $block-medium, "": $block, "large": $block-large);
+
+$block-size: "Placeholder Variable: For use in 'colors' mixin." !global;
+$block-suffix: "Placeholder Variable: For use in 'colors' mixin." !global;
+
+@mixin blocks {
+  $save: $block-size;
+  $save-key: $block-suffix;
+
+  @each $key, $val in $block-sizes {
+    $block-size: $val !global;
+    $block-suffix: "-" + $key !global;
+
+    @if($block-suffix == "-") {
+      $block-suffix: "" !global;
+      @content;
+    }
+    @else {
+      &#{$block-suffix} {
+        @content;
+      }
+    }
+  }
+
+  $block-size: $save !global;
+  $block-suffix: $save-key !global;
+}
+
+
+@function getSideBarWidthAtBreakpoint($bp) {
+  $side-bar-width-at-container: $side-bar-width;
+
+  @if ($bp >= $xl) {
+    $side-bar-width-at-container: $side-bar-width;
+  }
+
+  @elseif ($bp >= $lg) {
+    $side-bar-width-at-container: $side-bar-width * .75;
+  }
+
+  @elseif ($bp >= $sm) {
+    $side-bar-width-at-container: $side-bar-width * .5;
+  }
+  @else {
+    $side-bar-width-at-container: 35px;
+  }
+
+  @return $side-bar-width-at-container;
+}

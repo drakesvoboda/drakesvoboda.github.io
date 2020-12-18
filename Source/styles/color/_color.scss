@@ -1,0 +1,81 @@
+@import "lib";
+@import "../util/lib";
+
+.bg {
+  @include colors {
+    background-color: $color !important;
+  }
+}
+
+.text {
+  @include colors {
+    color: $color !important;
+  }
+}
+
+.hover {
+  @include colors {
+    @include hover {
+      color: $color !important;
+    }
+  }
+}
+
+.overlay {
+  @include colors {
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      background: $color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: .6;
+      mix-blend-mode: hard-light;
+    }
+  }
+}
+
+.gradient {
+  @each $key, $val in $gradients {
+    &-#{$key} {
+      background: linear-gradient(#{90deg - 0deg}, nth($val, 2), nth($val, 1)) center center;
+
+      &-right {
+        background: linear-gradient(#{90deg - 0deg}, nth($val, 2), nth($val, 1)) center center;
+      }
+
+      &-45, &-top-right {
+        background: linear-gradient(#{90deg - 45deg}, nth($val, 2), nth($val, 1)) center center;
+      }
+
+      &-90, &-top {
+        background: linear-gradient(#{90deg - 90deg}, nth($val, 2), nth($val, 1)) center center;
+      }
+
+      &-135, &-top-left {
+        background: linear-gradient(#{90deg - 135deg}, nth($val, 2), nth($val, 1)) center center;
+      }
+
+      &-180, &-left {
+        background: linear-gradient(#{90deg - 180deg}, nth($val, 2), nth($val, 1)) center center;
+      }
+
+      &--135, &-bottom-left {
+        background: linear-gradient(#{90deg + 135deg}, nth($val, 2), nth($val, 1)) center center;
+      }
+
+      &--90, &-bottom {
+        background: linear-gradient(#{90deg + 90deg}, nth($val, 2), nth($val, 1)) center center;
+      }
+
+      &--45, &-bottom-right {
+        background: linear-gradient(#{90deg + 45deg}, nth($val, 2), nth($val, 1)) center center;
+      }
+    }
+  }
+}

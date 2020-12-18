@@ -1,0 +1,110 @@
+@import 'node_modules/sass-math-pow/sass/math-pow';
+@import "../media/lib";
+
+// Ratios
+$major-second: 1.125;
+$minor-third: 1.200;
+$major-third: 1.25;
+$perfect-fourth: 1.33333;
+$augmented-fourth: 1.414;
+$perfect-fifth: 1.5;
+
+$type-ratio: $major-third !default;
+
+$font-body: 'Nunito', sans-serif;
+$font-headline: 'PT Serif', serif;
+$font-mono: 'Roboto Mono', monospace;
+
+$base-font-size: 18px !default;
+
+@function pxtoem($val, $context: $base-font-size) {
+  @if (unitless($val)) {
+    $val: $val * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $val / $context * 1em;
+}
+
+@function pxtorem($val) {
+  @if (unitless($val)) {
+    $val: $val * 1px;
+  }
+
+  @return $val / $base-font-size * 1rem;
+}
+
+@function make-ratio($val, $ratio: $type-ratio) {
+  @return poly-pow($ratio, $val);
+}
+
+@mixin font-size-small($val) {
+  font-size: make-ratio($val, $type-ratio) * 1em;
+
+    @media(max-width:$xxs-max) {
+      font-size: make-ratio($val, $type-ratio) - .3 * 1em;
+    }
+  }
+
+@mixin font-size($val) {
+  font-size: make-ratio($val, $type-ratio) * 1em;
+}
+
+@mixin lowercase-headline {
+  font-family: $font-headline;
+  line-height: 1.25;
+  margin-top: .75em;
+  margin-bottom: .5em;
+  font-weight: 600;
+}
+
+@mixin p {
+  @include font-size(0);
+  text-transform: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  margin-bottom: 1em;
+}
+
+@mixin h1 {
+  @include font-size-small(6);
+  @include lowercase-headline;
+}
+
+@mixin h2 {
+  @include font-size-small(5);
+  @include lowercase-headline;
+}
+
+@mixin h3 {
+  @include font-size-small(4);
+  @include lowercase-headline;
+}
+
+@mixin h4 {
+  @include font-size-small(3);
+  @include lowercase-headline;
+}
+
+@mixin h5 {
+  @include font-size(2);
+  @include lowercase-headline;
+  margin-bottom: 0.5em;
+}
+
+@mixin h6 {
+  @include font-size(1);
+  @include lowercase-headline;
+  font-weight: 700;
+}
+
+@mixin headlines {
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+        @content;
+    }
+}

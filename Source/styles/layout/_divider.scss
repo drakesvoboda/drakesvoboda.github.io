@@ -1,0 +1,20 @@
+﻿@import "../media/lib";
+@import "lib";
+
+.divide {
+  @include breakpoints {
+    @for $i from 0 to 11 {
+      &-#{$i * 5} {
+        width: 100%;
+        display: block;
+        height: pxtorem($i * 5);
+      }
+    }
+
+    @include blocks {
+      width: 100%;
+      display: block;
+      height: $block-size;
+    }
+  }
+}

@@ -1,0 +1,298 @@
+@import "lib";
+@import "../media/lib";
+@import "../color/lib";
+@import "../util/lib";
+
+html,
+body {
+	width: 100%;
+	overflow-x: hidden;
+	min-width: 320px;
+	font-family: $font-body;
+	color: $text-color;
+	line-height: 1.6;
+
+	background: $blue;
+
+	font-size: $base-font-size - 2px;
+	
+	@media(min-width: $lg) {
+		font-size: $base-font-size;
+	}
+}
+
+html {
+  overflow-y: scroll;
+}
+
+#site {
+  transition: opacity .5s .2s;
+
+  @include loading {
+    opacity: 0;
+  }
+
+  @include loaded {
+    opacity: 1;
+  }
+}
+
+#main-content {
+  max-width: 3840px;
+  margin: 0 auto;
+}
+
+
+p, .p {
+  @include p;
+}
+
+.mono {
+	font-family: $font-mono;
+}
+
+.meta {
+	font-family: $font-mono;
+	color: $text-accent;
+}
+
+h1,
+.h1 {
+  @include h1;
+}
+
+h2,
+.h2 {
+  @include h2;
+}
+
+h3,
+.h3 {
+  @include h3;
+}
+
+h4,
+.h4 {
+  @include h4;
+}
+
+h5,
+.h5 {
+  @include h5;
+}
+
+h6,
+.h6 {
+  @include h6;
+}
+
+@include headlines {
+ color: $white;
+}
+
+.lowercase-headline {
+  @include lowercase-headline;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.15s;
+  color: $text-accent;
+
+  @include hover {
+    text-decoration: underline;
+    color: $text-color;
+  }
+}
+
+button {
+  transition: all 0.15s;
+}
+
+.blank {
+  color: inherit;
+  text-decoration: none;
+
+  @include hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+button.blank {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  outline: 0;
+}
+
+%list-inline {
+  padding-left: 0;
+  margin-left: -1 * pxtoem(5);
+  margin-right: -1 * pxtoem(5);
+  list-style: none;
+
+  > li {
+    display: inline-block;
+    padding-right: pxtoem(5);
+    padding-left: pxtoem(5);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.list-inline {
+  @extend %list-inline;
+}
+
+.pipe-list {
+  @extend %list-inline;
+
+  > li {
+    &:after {
+      content: " | ";
+      display: inline-block;
+      margin-left: pxtoem(10);
+    }
+
+    &:last-child:after {
+      content: normal;
+    }
+  }
+}
+
+.slash-list {
+  @extend %list-inline;
+  margin-left: -1 * pxtoem(3);
+  margin-right: -1 * pxtoem(3);
+
+  > li {
+    padding-right: pxtoem(3);
+    padding-left: pxtoem(3);
+
+    &:after {
+      content: " / ";
+      display: inline-block;
+      margin-left: pxtoem(6);
+    }
+
+    &:last-child:after {
+      content: normal;
+    }
+  }
+}
+
+.list-unstyled {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+hr {
+  border: 1px solid;
+  opacity: .75;
+  margin: pxtoem(40) 0;
+  width: 100%;
+  display: inline-block;
+
+  &.bar {
+    border: 0;
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+.strong, .bold, strong, b {
+  font-weight: 700;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.no-break {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+ul {
+  margin-bottom: 1em;
+  padding-left: 20px;
+  line-height: 1.2;
+
+  > li {
+    padding: 0.1em 0;
+  }
+}
+
+small,
+.small {
+  @include font-size(-1);
+}
+
+.font-size-0 {
+  @include font-size(0);
+}
+
+large,
+.large,
+.font-size-1 {
+  @include font-size(1);
+}
+
+.font-size-2 {
+  @include font-size(2);
+}
+
+.font-size-3 {
+  @include font-size(3);
+}
+
+.font-size-4 {
+  @include font-size(4);
+}
+
+.font-size-5 {
+  @include font-size(5);
+}
+
+.font-size-6 {
+  @include font-size(6);
+}
+
+.font-size-7 {
+  @include font-size(7);
+}
+
+.inline-spacer {
+  display: inline-block;
+  width: 1em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-headline {
+  font-family: $font-headline;
+}
+
+.font-body {
+  font-family: $font-body;
+}
+
+.legalese {
+  font-size: 12px;
+}
+

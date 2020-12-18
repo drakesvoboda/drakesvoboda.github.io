@@ -1,0 +1,49 @@
+@import "../type/lib";
+
+.mt {
+  &-auto {
+    margin-top: auto;
+  }
+
+  @for $i from 0 to 11 {
+    &-#{$i * 5} {
+      margin-top: pxtorem($i * 5);
+    }
+  }
+}
+
+.mb {
+  &-auto {
+    margin-bottom: auto;
+  }
+
+  @for $i from 0 to 11 {
+    &-#{$i * 5} {
+      margin-bottom: pxtorem($i * 5);
+    }
+  }
+}
+
+.ml {
+  &-auto {
+    margin-left: auto;
+  }
+
+  @for $i from 0 to 0 {
+    &-#{$i * 5} {
+      margin-left: pxtorem($i * 5);
+    }
+  }
+}
+
+.mr {
+  &-auto {
+    margin-right: auto;
+  }
+
+  @for $i from 0 to 0 {
+    &-#{$i * 5} {
+      margin-right: pxtorem($i * 5);
+    }
+  }
+}

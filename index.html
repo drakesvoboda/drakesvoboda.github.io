@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Drake Svoboda | Portfolio</title>
+	<link rel="shortcut icon" href="/areas/cms/assets/img/favicon.png" />
+	<meta name="description" content="@ViewBag.MetaDescription">
+	<meta name="keywords" content="@ViewBag.MetaKeywords">
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+
+	<link rel="stylesheet" href="./Build/styles/vendor.css" />
+	<link rel="stylesheet" href="./Build/styles/main.css" />
+</head>
+<body>	
+	<div class="banner">
+		<div class="container">
+			<header>
+				<p class="meta">Hi, my name is</p>
+				<h1>Drake Svoboda</h1>
+				<p style="max-width: 33em;">
+					I'm a software-engineer based in Detroit and
+					a masters student at the University of Michigan (go blue!).
+					I have five years work experience in web-development and am intereseted in all things machine learning.
+				</p>
+			</header>
+		</div>
+	</div>
+	<div class="container">
+		<h2>
+			Portfolio
+		</h2>
+		<p>
+			Below is a collection of personal and course-projects dating back to my time as an undergrad.
+		</p>
+		<div class="portfolio">
+			<section class="portfolio__project">
+				<p class="meta">Dec. 2020</p>
+				<h3>Natural Language Inference</h3>
+				<p>
+					For the final project in my natural language processing class, my group and I were tasked with solving 
+					three natural language inference (NLI) benchmarks:
+				</p>		
+				<p>
+					<strong class="text-white">CommonsenseQA</strong>&mdash;given a common-sense question, choose
+					the correct answer out of 5 multiple-choice options
+				</p>
+				<p>
+					<strong class="text-white">Conversational Entailment</strong>&mdash;given a short dialoge between
+					speakers, determine if a given hypothesis can
+					be inferred from the dialog.
+				</p>
+				<p>
+					<strong class="text-white">Everyday Actions Text (EAT)</strong>&mdash;determine if a short story is plausible,
+					and if it isn't, determine when the story stops making sense.
+				</p>
+				<p>
+					Natural language inference is the problem of determining if a hypothesis can be reasonably infered from a natural language premise.
+					NLI is a notoriously difficult problem that requires machines to reason about the meanings of language.
+					Deep-learning has been a huge breakthrough in NLP research and has advanced the state-of-the-art for many tasks.
+					Not-surprisingly, large transformer models like BERT were the best performers amongst the groups in the class.
+					My group and I made use of transformers and&mdash;out of twenty-five teams in the class&mdash;performed fifth best on the Conversational Entailment
+					benchmark and third best performance on the EAT benchmark.
+				</p>
+				<a href="/" class="link">Read More</a>
+				<span class="inline-spacer"></span>
+				<a href="/" class="link">Try the Code</a>
+			</section>
+			<section class="portfolio__project">
+				<p class="meta">Dec. 2020</p>
+				<h3>Static Branch Prediction for LLVM IRs Using Machine Learning</h3>
+				<p>
+					For the final project in my advanced compilers class, my group and I trained an ML model to predict the bias of
+					an assembly branch instruction.
+					Static-branch prediction is the process of predicting which direction a branch instruction will take before it is executed.
+					Accuracte branch prediction is really important for compilers to make intelligent decisions when optimizing code.
+					Our model performs better than LLVM's internal branch predictor, which we think is a really good result.
+				</p>
+				<a href="/" class="link">Read More</a>
+			</section>
+			<section class="portfolio__project">
+				<p class="meta">Sep. 2020</p>
+				<h3>Using RL to beat QWOP</h3>
+				<p>
+					A friend of mine is really good at the browser game <a href="http://www.foddy.net/Athletics.html">QWOP</a>
+					where you control a sprinters legs and try to run a 100 meter dash.
+					He is so good in fact that he's ranked within the top ten globally.
+					I'm competative and wanted to beat him, but I'm also really terrible at the game. 
+					I decided the only way to beat him was to resort to using reinforcement learning.
+				</p>
+				<p>
+					I trained my computer to beat the game using an algorithm called Proximal Policy Optimization.
+					My computer can beat the game, but it isn't faster than my friend.
+				</p>
+				<a href="/" class="link">Try the Code</a>
+			</section>
+			<section class="portfolio__project">
+				<p class="meta">Apr. 2020</p>
+				<h3>Emoji-AI: Learning to Predict Emojis from 1.8 Million Tweets</h3>
+				<p>
+					In my second semester at Michigan, I took a special topics class called <i>Applied Machine Learning for Affective Computing</i>.
+					The topic of the class was to use machine learning techniques to understand and predict human emotions.
+					What better encapsulates the full range of human emotion than emojis?
+					For my final project I trained a model to predict what emojis should be used in a natural language input.
+				</p>
+				<a href="/" class="link">Read More</a>
+				<span class="inline-spacer"></span>
+				<a href="/" class="link">Try the Code</a>
+			</section>
+			<section class="portfolio__project">
+				<p class="meta">Apr. 2020</p>
+				<h3>Optical Flow Estimation using PWC-Net</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a condimentum erat, non imperdiet odio.
+					Nulla ut sem vel mi egestas rutrum. Donec consectetur orci sit amet hendrerit consectetur. Phasellus
+					magna elit, fringilla at hendrerit in, pretium nec augue. Phasellus interdum nisl eu sollicitudin ornare.
+					Sed sit amet massa at metus euismod pulvinar convallis quis odio. Curabitur sit amet imperdiet augue,
+					sit amet feugiat mi.
+				</p>
+				<a href="/" class="link">Read More</a>
+				<span class="inline-spacer"></span>
+				<a href="/" class="link">Try the Code</a>
+			</section>
+			<section class="portfolio__project">
+				<p class="meta">Dec. 2019</p>
+				<h3>2.5-PC: A Faster and Non-Blocking Atomic Commit Protocol</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a condimentum erat, non imperdiet odio.
+					Nulla ut sem vel mi egestas rutrum. Donec consectetur orci sit amet hendrerit consectetur. Phasellus
+					magna elit, fringilla at hendrerit in, pretium nec augue. Phasellus interdum nisl eu sollicitudin ornare.
+					Sed sit amet massa at metus euismod pulvinar convallis quis odio. Curabitur sit amet imperdiet augue,
+					sit amet feugiat mi.
+				</p>
+				<a href="/" class="link">Read More</a>
+			</section>
+			<section class="portfolio__project">
+				<p class="meta">Dec. 2018</p>
+				<h3>Deep.ditch: Computer Vision for Automated Road Damage Detection</h3>
+				<p>
+					This project was my first experience learning about and applying machine learning.
+					I became interested in ML as a junior in college and I asked one of my professors and mentors (Dr. Shiyong Lu) if knew of any interesting projects to work on.
+					He pointed me towards a vision competition hosted by a workshop at the 2018 IEEE Conference on Big Data.
+				</p>
+				<p>
+					The goal of the competion was to detect and localize instances of road damage in images.
+					I taught myself deep-learning and pytorch, trained my model, wrote a report, and submitted my results.
+					I placed 10th overall in the competition and my report was accepted by the workshop's reviewers (not bad for an undergrad working alone).
+					Unfortunetly, I was unable to attend the conference and my report went unpublished, but hey, I was just happy it got accepted.
+				</p>
+				<p>
+					My senior year, my capstone project team deployed my model to an iOS app that 
+					automatically reports road damage.
+					The model runs locally on a mobile device and is used to capture images 
+					when it detects them and store the images, along with their gps coordinates, to a remote database.
+					The idea was that municipalities, who currently rely on individual reports and
+					hired experts, could mount smartphones to fleets of vehicles to 
+					passivly and automatically locate and report road damage.
+				</p>
+				<a href="/" class="link">Read More</a>
+			</section>
+		</div>
+	</div>
+
+	<script src="./Build/js/app.js"></script>
+</body>
+</html>

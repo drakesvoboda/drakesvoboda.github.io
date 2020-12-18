@@ -1,0 +1,31 @@
+﻿@import "../layout/lib";
+@import "../color/lib";
+
+
+.portfolio {
+	border-left: 1px solid;
+	max-width: 45em;
+
+	&__project {
+		position: relative;
+		padding-left: $block-small;
+		margin: $block 0;
+
+		.meta {
+			line-height: 1;
+		}
+
+		&:before {
+			content: '';
+			width: pxtoem(15);
+			height: pxtoem(15);
+			display: block;
+			position: absolute;
+			top: 0;
+			left: -1px;
+			transform: translate(-50%, 0);
+			background: $blue;
+			border: 1px solid $text-accent;
+		}
+	}
+}

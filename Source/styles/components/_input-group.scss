@@ -1,0 +1,200 @@
+@import "../type/lib";
+@import "../color/lib";
+@import "../util/lib";
+@import "../layout/lib";
+
+.input-group {
+  width: 100%;
+  display: block;
+  position: relative;
+  margin-bottom: 1em;
+
+  input, textarea, select, &.file-input {
+    display: block;
+    width: 100%;
+
+    &[type="date"] {
+      &:focus, &:hover {
+        ~ .far {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .far {
+    float: right;
+    line-height: 1.2;
+    opacity: 0.8;
+    position: absolute;
+    @include font-size(1);
+    top: 50%;
+    right: 1em;
+    transform: translate(0, -50%);
+    transition: all .15s;
+    pointer-events: none;
+  }
+}
+
+$input-group-padding: pxtoem(15);
+$input-group-height: pxtoem(62.3);
+
+@mixin label-center {
+  top: $input-group-height / 2;
+  transform: translate(0, -50%) scale(1);
+}
+
+@mixin label-up {
+  top: ($input-group-height / 2) - ($input-group-padding / 2);
+  transform: translate(0, -65%) scale(.75);
+}
+
+.label-group {
+  width: 100%;
+  position: relative;
+  margin-bottom: 0;
+  border-radius: 0.2rem;
+
+  .label {
+    position: absolute;
+    left: ($input-group-padding * 1.25);
+    @include label-up;
+    transform-origin: left center;
+    transition: all .15s;
+    cursor: text;
+    opacity: .85;
+    color: inherit;
+    font-size: inherit;
+    display: block;
+    padding: 0;
+    font-weight: 400;
+    pointer-events: none;
+
+    small {
+      font-style: italic;
+      opacity: .75;
+    }
+  }
+
+  input, textarea, select, .select {
+    background: transparent;
+    color: inherit;
+  }
+
+  input, textarea, &.file-input {
+    padding: ($input-group-padding * 12/7) ($input-group-padding * 1.25) ($input-group-padding * 2/7);
+  }
+
+  .select select {
+    padding: ($input-group-padding * 12/7) ($input-group-padding * 1.25 - .2em) ($input-group-padding * 2/7);
+  }
+  /*.select select {
+    padding: ($input-group-padding * 3/2) ($input-group-padding * 1.25 - pxtoem(5)) ($input-group-padding / 2);
+  }*/
+  input[type="text"], input[type="file"], input[type="email"], input[type="tel"], input[type="password"], textarea {
+    @include placeholder {
+      color: rgba(0, 0, 0, 0);
+    }
+
+    &:placeholder-shown, &.placeholder-shown {
+      + .label {
+        @include label-center;
+      }
+    }
+  }
+
+  input[type="text"], input[type="email"], input[type="tel"], input[type="password"], textarea {
+    &:focus {
+      + .label {
+        @include label-up;
+      }
+    }
+  }
+
+  .select {
+    &.default-selected {
+      + .label {
+        @include label-center;
+      }
+
+      select {
+        color: rgba(0, 0, 0, 0);
+      }
+
+      option {
+        color: $black;
+      }
+    }
+  }
+
+  &.file-input {
+    strong {
+      position: absolute;
+      display: block;
+      transition: all .15s;
+      transform: translate(0, -50%) scale(.75);
+      top: calc(50% - 14px);
+      left: 10px;
+    }
+  }
+
+  &.bg-dark-green {
+    input, textarea, select, .select {
+      color: $blue;
+    }
+
+    .label {
+      color: $blue;
+      opacity: 1;
+    }
+  }
+}
+
+.file-input {
+  cursor: pointer;
+  position: relative;
+  background: #fff;
+  padding-right: pxtoem(60);
+
+  > input[type="file"] {
+    display: block;
+    z-index: -1;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    margin: 0;
+    height: calc(100% + 2px);
+    width: calc(100% + 2px);
+
+    &.placeholder-shown {
+      ~ .file-name {
+        opacity: 0;
+      }
+    }
+  }
+
+  .file-name {
+    max-width: 100%;
+    display: block;
+    overflow: hidden;
+    min-height: 1em;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity .15s;
+  }
+}
+
+.button-group {
+  position: relative;
+  display: flex;
+
+  .form-group {
+    margin-right: pxtoem(8);
+  }
+
+  button {
+    flex: 0 0 auto;
+    border: 0;
+    background: transparent;
+  }
+}
