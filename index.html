@@ -95,7 +95,7 @@
 					<li>C++</li>
 				</ul>
 				<p>
-					My group and I trained both classical and deep-learning models to predict the bias of
+					In my compilers class, my team and I trained both classical and deep-learning models to predict the bias of
 					an assembly branch instruction.
 					Compilers rely on accurate branch prediction to make intelligent decisions when optimizing code.
 					Our best model performs better than LLVM's internal branch predictor which we think is a really good result.
@@ -195,7 +195,7 @@
 				</figure>
 				<p>
 					Optical flow estimation is the process of estimating pixel-wise motion between consecutively captured images.
-					For the final project in my computer vision class, my group and I trained a large deep-learning model to predict 
+					For the final project in my computer vision class, my group and I implmeneted and trained a large deep-learning model to estimate 
 					optical flow in images captured during every-day driving scenarios. 
 				</p>
 				<a href="./public/PWC-Net.pdf" class="link">Read More</a>
@@ -214,14 +214,10 @@
 				</figure>
 				<p>
 					Atomic commitment is a fundemental problem in distributed systems.
-					There are two seminal protocols for attomic commitment: 2 phase commit (2PC) and 3 phase commit (3PC).
-					2PC is faster than 3PC, however, its progress can be blocked under certain failure senarious.			
-				</p>
-				<p>
+					There are two popular protocols for attomic commitment: 2 phase commit (2PC) and 3 phase commit (3PC).
+					2PC is faster than 3PC, however, its progress can be blocked under certain failure senarious.
 					For the final project in my distributed systems course, my group and I invented 2.5 phase commit, an atomic commit protocol that is non-blocking 
-					like 3PC but only requires the same number of message passing round trips as 2PC.
-					Our protocol isn't very practical as it relies on strong network reliability assumptions; 
-					however, developing and proving the correctness of our protocol developed our understanding of distributed systems. 
+					like 3PC but only requires the same number of message passing round trips as 2PC.	
 				</p>
 				<a href="./public/2_5_PC.pdf" class="link">Read More</a>
 			</section>
@@ -238,13 +234,15 @@
 					<img src="./public/images/TripletReg.png">
 				</figure>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a condimentum erat, non imperdiet odio.
-					Nulla ut sem vel mi egestas rutrum. Donec consectetur orci sit amet hendrerit consectetur. Phasellus
-					magna elit, fringilla at hendrerit in, pretium nec augue. Phasellus interdum nisl eu sollicitudin ornare.
-					Sed sit amet massa at metus euismod pulvinar convallis quis odio. Curabitur sit amet imperdiet augue,
-					sit amet feugiat mi.
+					I took a machine learning course my first semester at Michigan.
+					In the class we covered the theoretical and mathematical foundations of several machine learning algorithm.
+					For the final project in the course, my project group and I investigated a novel method for regularizing 
+					neural nets that applies a triplet loss term at intermediate hidden layers.
+					The regularization term induces large margins in the hidden states of a neural-net.
+					We found that our method improved both generalization performance and robsutness to adversarial examples on the MNIST and CIFAR-10 datasets.
+					We presented our method at a poster session featuring other projects from the course and our project won first prize for the open-ended project track.
 				</p>
-				<a href="/" class="link">Read More</a>
+				<a href="./public/TripletReg.pdf" class="link">Read More</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Dec. 2018</p>
@@ -265,18 +263,14 @@
 					The goal of the competion was to detect and localize instances of road damage in images.
 					I taught myself deep-learning and PyTorch, trained my model, wrote a report, and submitted my results.
 					I placed 10th overall in the competition and my report was accepted by the workshop's reviewers (not bad for an undergrad working alone).
-					Unfortunately, I was unable to attend the conference and my report went unpublished, but hey, I was just happy it got accepted.
+					Unfortunately, I was unable to attend the conference and my report went unpublished, but hey, I was happy it got accepted.
 				</p>
 				<p>
-					My senior year, my capstone project team and I deployed my model to an iOS app that
-					automatically reports road damage.
-					The model runs locally on a mobile device and is used to capture images of road damage and
-					store them and their gps coordinates to a remote service.
-					The idea is that municipalities, who currently rely on individual reports and
-					hired experts, could mount smartphones to fleets of vehicles to
-					passivly and automatically locate and report road damage within their jurisdiction.
+					My senior year, I lead a capstone project team that deployed my model to an iOS app.
+					The model runs locally on device and is used to capture images of road damage and
+					report them and their gps coordinates to a remote service.
 				</p>
-				<a href="/" class="link">Read More</a>
+				<a href="./public/roaddamage.pdf" class="link">Read More</a>
 			</section>
 		</div>
 	</div>
