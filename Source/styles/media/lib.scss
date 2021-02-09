@@ -13,8 +13,11 @@ $md-max: $md - 1;
 $lg: 1200px;
 $lg-max: $lg - 1;
 
+$xl: 1440px;
+$xl-max: $xl - 1;
+
 //Media Varaible Usage: @media(min-width: $var){ } or @media(max-width: $var-max){ }
-$breakpoints: ('xs': $xs, 'sm': $sm, 'md': $md, 'lg': $lg);
+$breakpoints: ('xs': $xs, 'sm': $sm, 'md': $md, 'lg': $lg, 'xl': $xl);
 
 $num-cols: 12;
 $gutter: 15px;

@@ -15,7 +15,7 @@ $font-body: 'Nunito', sans-serif;
 $font-headline: 'PT Serif', serif;
 $font-mono: 'Roboto Mono', monospace;
 
-$base-font-size: 18px !default;
+$base-font-size: 20px !default;
 
 @function pxtoem($val, $context: $base-font-size) {
   @if (unitless($val)) {

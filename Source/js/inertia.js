@@ -21,7 +21,7 @@ Inertia.prototype = {
 	run: function () {
 		var _ = this;
 
-		var fps = 120, now, then = Date.now(), interval = 1000 / fps, delta;
+		var fps = 60, now, then = Date.now(), interval = 1000 / fps, delta;
 
 		var cycle = function () {
 			requestAnimFrame(cycle);
@@ -30,17 +30,17 @@ Inertia.prototype = {
 
 			if (delta > interval) {
 				then = Date.now();
-				_.update();
+				_.update(delta / 1000);
 			}
 		}
 
 		requestAnimFrame(cycle);
 	},
 
-	update: function () {
+	update: function (dt) {
 		var _ = this;	
 		var force = _.targetVal - _.value;
-		_.value += force / _.mass
+		_.value += (force / _.mass) * math.min(dt, 1);
 		_.callback(_.value);
 	},
 

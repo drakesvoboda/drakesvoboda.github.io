@@ -28,4 +28,28 @@
 			border: 1px solid $text-accent;
 		}
 	}
+
+	&__image {
+		box-shadow: pxtoem(5) pxtoem(5) pxtoem(10) pxtoem(10) rgba($black, .35);
+		position: relative;
+		border-radius: pxtoem(4);
+		overflow: hidden;
+		margin: 1em 0 1.5rem;
+		max-width: 75%;
+
+		img {
+			width: 100%;
+		}
+		
+		&:after {
+			
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;		
+			background: rgba(darken($yellow, 20%), .2);
+		}
+	}
 }

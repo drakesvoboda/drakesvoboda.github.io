@@ -1,0 +1,15 @@
+@import "../color/lib";
+@import "../type/lib";
+
+.tags {
+    @include font-size(-1);
+    margin: 1rem 0 1.5rem;
+
+    li {
+        padding: pxtoem(6) pxtoem(10) pxtoem(8);
+        border-radius: pxtoem(3);
+        color: $light-gray;
+        background-color: rgba($dark-gray, 0.1);
+        border: 1px solid;
+    }
+}

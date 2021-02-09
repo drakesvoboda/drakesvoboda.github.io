@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Drake Svoboda | Portfolio</title>
 	<link rel="shortcut icon" href="/areas/cms/assets/img/favicon.png" />
@@ -17,32 +20,98 @@
 	<link rel="stylesheet" href="./Build/styles/main.css" />
 </head>
 <body>	
-	<div class="banner">
+	<div class="banner top-banner relative">
 		<div class="container">
 			<header>
 				<p class="meta">Hi, my name is</p>
 				<h1>Drake Svoboda</h1>
 				<p style="max-width: 33em;">
-					I'm a software-engineer based in Detroit and
-					a masters student at the University of Michigan (go blue!).
-					I have five years work experience in web-development and am intereseted in all things machine learning.
+					I'm a software engineer based in Detroit and
+					a master's student at the <a href="https://umich.edu/">University of Michigan</a> (go blue!).
+					I have six years work experience in web-development and am intereseted in all things machine learning.
 				</p>
 			</header>
+		</div>
+		<div class="nn-container">
+			<div class="tooltip">
+				<div class="row">
+					<div class="col-auto">
+						<i class="fa fa-info-circle"></i>
+					</div>
+					<div class="col">
+						<span>
+							This neural net predicts an animal from its height.
+							Click the neurons in the input layer to change the height of the animal.
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="nn-container__inner w-100 relative">
+				<canvas id="nn"></canvas>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div style="max-width:45em">	
+			<h2>
+				About Me
+			</h2>
+			<p>			
+				I graduated from <a href="https://wayne.edu/">Wayne State University</a> in 2015 with a bachelor's in computer science and a minor in mathematics.
+				Since then I've been pursuing a master's in comp-sci from the <a href="https://umich.edu/">University of Michigan</a>.	
+				I have taken graduate level courses covering large scale distributed systems, compilers, artifical intelligence, machine learning, 
+				computer vision, and nautral language processing.
+				My academic experiences have allowed me to work on a wide variety of software and machine learning projects.		
+			</p>
+			<p>
+				Throughout my college career I've worked in web development at <a href="https://www.thinkmoncur.com/">Moncur</a>.
+				At work I develop beautiful and performant web experiences with teams of developers and designers.
+			</p>
+			<p>Below are some of the skills and technologies I've used recently:</p>
+			<ul class="columns-2">
+				<li>Javascript (ES6)</li>
+				<li>HTML &amp; CSS</li>
+				<li>Python</li>
+				<li>PyTorch</li>
+				<li>C++</li>
+				<li>C#</li>
+				<li>ASP.NET MVC</li>
+				<li>SQL</li>
+			</ul>
 		</div>
 	</div>
 	<div class="container">
 		<h2>
-			Portfolio
+			Projects
 		</h2>
-		<p>
-			Below is a collection of personal and course-projects dating back to my time as an undergrad.
-		</p>
 		<div class="portfolio">
 			<section class="portfolio__project">
 				<p class="meta">Dec. 2020</p>
-				<h3>Natural Language Inference</h3>
+				<h3>Static Branch Prediction for LLVM IRs Using Machine Learning</h3>
+				<ul class="list-inline tags meta text-light-gray">
+					<li>Compilers</li>
+					<li>AI</li>
+					<li>LLVM</li>
+					<li>C++</li>
+				</ul>
 				<p>
-					For the final project in my natural language processing class, my group and I were tasked with solving
+					My group and I trained both classical and deep-learning models to predict the bias of
+					an assembly branch instruction.
+					Compilers rely on accurate branch prediction to make intelligent decisions when optimizing code.
+					Our best model performs better than LLVM's internal branch predictor which we think is a really good result.
+				</p>
+				<a href="./public/StaticBranchPrediction.pdf" class="link">Read More</a>
+			</section>
+			<section class="portfolio__project">
+				<p class="meta">Dec. 2020</p>
+				<h3>Natural Language Inference</h3>
+				<ul class="list-inline tags meta text-light-gray">
+					<li>NLP</li>
+					<li>Python</li>
+					<li>PyTorch</li>
+				</ul>
+				<p>
+					For the final project in my natural language processing class, each group was tasked with solving
 					three natural language inference (NLI) benchmarks:
 				</p>
 				<p>
@@ -59,87 +128,115 @@
 					and if it isn't, determine when the story stops making sense.
 				</p>
 				<p>
-					Natural language inference is the problem of determining if a hypothesis can be reasonably infered from a natural language premise.
-					NLI is a notoriously difficult problem that requires machines to reason about the meanings of language.
-					Deep-learning has been a huge breakthrough in NLP research and has advanced the state-of-the-art for many tasks.
-					Not-surprisingly, large transformer models like BERT were the best performers amongst the groups in the class.
-					My group and I made use of transformers and&mdash;out of twenty-five teams in the class&mdash;performed fifth best on the Conversational Entailment
-					benchmark and third best performance on the EAT benchmark.
+					Natural language inference is a notoriously difficult problem that requires machines to reason about the meanings of language.
+					Deep-learning has been a huge breakthrough in NLP research and has advanced the state-of-the-art for NLI.
+					My group and I used large transformer models on these benchmarks and&mdash;out of twenty-five teams in the class&mdash;performed fifth best on the Conversational Entailment
+					benchmark and third best on the EAT benchmark.
 				</p>
-				<a href="/" class="link">Read More</a>
+				<a href="./public/NLI.pdf" class="link">Read More</a>
 				<span class="inline-spacer"></span>
-				<a href="/" class="link">Try the Code</a>
-			</section>
-			<section class="portfolio__project">
-				<p class="meta">Dec. 2020</p>
-				<h3>Static Branch Prediction for LLVM IRs Using Machine Learning</h3>
-				<p>
-					For the final project in my advanced compilers class, my group and I trained both classical and deep-learning models to predict the bias of
-					an assembly branch instruction.
-					Static-branch prediction is the process of predicting which direction a branch instruction will take before it is executed.
-					Compilers rely on accurate branch prediction to make intelligent decisions when optimizing code.
-					Our best model performs better than LLVM's internal branch predictor, which we think is a really good result.
-				</p>
-				<a href="/" class="link">Read More</a>
+				<a href="https://colab.research.google.com/drive/1t9XKMNCDIopco_6b3UkkyrjMyaRw0tf6?usp=sharing" class="link">Try the Code</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Sep. 2020</p>
 				<h3>Using RL to beat QWOP</h3>
+				<ul class="list-inline tags meta text-light-gray">
+					<li>Reinforcement Learning</li>
+					<li>Python</li>
+					<li>PyTorch</li>
+				</ul>
+				<figure class="portfolio__image">
+					<img src="./public/images/RLQWOP.png">
+				</figure>
 				<p>
-					A friend of mine is really good at the browser game <a href="http://www.foddy.net/Athletics.html">QWOP</a>
-					where you control a sprinters legs and try to run a 100 meter dash.
-					He is so good in fact that he's ranked within the top ten globally.
-					I'm competative and wanted to beat him, but I'm also really terrible at the game.
+					A friend of mine is really good at <a href="http://www.foddy.net/Athletics.html">QWOP</a>: 
+					a video game where you control a sprinter's legs to run a 100 meter dash.
+					He is so good that he's ranked within the top ten globally.
+					I wanted to beat him&mdash;but I'm terrible at the game.
 					I decided the only way to win was to resort to reinforcement learning.
 				</p>
 				<p>
 					I trained my computer to beat the game using an algorithm called Proximal Policy Optimization.
 					My computer can beat the game, but it isn't faster than my friend.
 				</p>
-				<a href="/" class="link">Try the Code</a>
+				<a href="https://github.com/drakesvoboda/RL-QWOP" class="link">Try the Code</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Apr. 2020</p>
 				<h3>Emoji-AI: Learning to Predict Emojis from 1.8 Million Tweets</h3>
+				<ul class="list-inline tags meta text-light-gray">
+					<li>NLP</li>
+					<li>Python</li>
+					<li>PyTorch</li>
+				</ul>
+				<figure class="portfolio__image">
+					<img src="./public/images/EmojAI.png">
+				</figure>
 				<p>
 					In my second semester at Michigan, I took a special topics class called <i>Applied Machine Learning for Affective Computing</i>.
-					The topic of the class was to use machine learning techniques to understand and predict human emotions.
+					In the class we used machine learning techniques to process natural language, recognize speech, and understand and predict human emotions.
 					What better encapsulates the full range of human emotion than emojis?
 					For my final project I trained a model to predict what emojis should be used in a natural language input.
 				</p>
-				<a href="/" class="link">Read More</a>
+				<a href="./public/EmojAI.pdf" class="link">Read More</a>
 				<span class="inline-spacer"></span>
-				<a href="/" class="link">Try the Code</a>
+				<a href="https://colab.research.google.com/drive/1Hdu2arTC1uSldsvyqZ9Jf92M-z4veg3I?usp=sharing" class="link">Try the Code</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Apr. 2020</p>
-				<h3>Optical Flow Estimation using PWC-Net</h3>
+				<h3>Optical Flow Estimation using PWC&#8209;Net</h3>
+				<ul class="list-inline tags meta text-light-gray">
+					<li>Computer Vision</li>
+					<li>Python</li>
+					<li>PyTorch</li>
+				</ul>
+				<figure class="portfolio__image">
+					<img src="./public/images/PWC-Net.png">
+				</figure>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a condimentum erat, non imperdiet odio.
-					Nulla ut sem vel mi egestas rutrum. Donec consectetur orci sit amet hendrerit consectetur. Phasellus
-					magna elit, fringilla at hendrerit in, pretium nec augue. Phasellus interdum nisl eu sollicitudin ornare.
-					Sed sit amet massa at metus euismod pulvinar convallis quis odio. Curabitur sit amet imperdiet augue,
-					sit amet feugiat mi.
+					Optical flow estimation is the process of estimating pixel-wise motion between consecutively captured images.
+					For the final project in my computer vision class, my group and I trained a large deep-learning model to predict 
+					optical flow in images captured during every-day driving scenarios. 
 				</p>
-				<a href="/" class="link">Read More</a>
+				<a href="./public/PWC-Net.pdf" class="link">Read More</a>
 				<span class="inline-spacer"></span>
-				<a href="/" class="link">Try the Code</a>
+				<a href="https://colab.research.google.com/drive/1ojZnJlTLl3sZGZyR4nUcQx1367AVubal?usp=sharing" class="link">Try the Code</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Dec. 2019</p>
 				<h3>2.5-PC: A Faster and Non-Blocking Atomic Commit Protocol</h3>
+				<ul class="list-inline tags meta text-light-gray">
+					<li>Distributed Systems</li>
+					<li>Dafny</li>
+				</ul>
+				<figure class="portfolio__image">
+					<img src="./public/images/2.5PC.png">
+				</figure>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a condimentum erat, non imperdiet odio.
-					Nulla ut sem vel mi egestas rutrum. Donec consectetur orci sit amet hendrerit consectetur. Phasellus
-					magna elit, fringilla at hendrerit in, pretium nec augue. Phasellus interdum nisl eu sollicitudin ornare.
-					Sed sit amet massa at metus euismod pulvinar convallis quis odio. Curabitur sit amet imperdiet augue,
-					sit amet feugiat mi.
+					Atomic commitment is a fundemental problem in distributed systems.
+					There are two seminal protocols for attomic commitment: 2 phase commit (2PC) and 3 phase commit (3PC).
+					2PC is faster than 3PC, however, its progress can be blocked under certain failure senarious.			
 				</p>
-				<a href="/" class="link">Read More</a>
+				<p>
+					For the final project in my distributed systems course, my group and I invented 2.5 phase commit, an atomic commit protocol that is non-blocking 
+					like 3PC but only requires the same number of message passing round trips as 2PC.
+					Our protocol isn't very practical as it relies on strong network reliability assumptions; 
+					however, developing and proving the correctness of our protocol developed our understanding of distributed systems. 
+				</p>
+				<a href="./public/2_5_PC.pdf" class="link">Read More</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Dec. 2019</p>
 				<h3>Triplet Loss for Regularizing Deep Neural Networks</h3>
+				<ul class="list-inline tags meta text-light-gray">
+					<li>Machine Learning</li>
+					<li>Computer Vision</li>
+					<li>Python</li>
+					<li>PyTorch</li>
+				</ul>
+				<figure class="portfolio__image">
+					<img src="./public/images/TripletReg.png">
+				</figure>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a condimentum erat, non imperdiet odio.
 					Nulla ut sem vel mi egestas rutrum. Donec consectetur orci sit amet hendrerit consectetur. Phasellus
@@ -152,22 +249,29 @@
 			<section class="portfolio__project">
 				<p class="meta">Dec. 2018</p>
 				<h3>Deep.ditch: Computer Vision for Automated Road Damage Detection</h3>
+				<ul class="list-inline tags meta text-light-gray">
+					<li>Computer Vision</li>
+					<li>Core ML</li>
+					<li>iOS</li>
+					<li>React</li>
+				</ul>
 				<p>
-					This project was my first experience with machine learning.
-					I became interested in ML as a junior in college and I asked one of my professors and mentors (Dr. Shiyong Lu) if knew of any interesting projects to work on.
+					I became interested in machine learning as a junior in college. 
+					I asked one of my professors and mentors (Dr. Shiyong Lu) if he knew of any interesting projects 
+					I could work on to learn more about the topic.
 					He pointed me towards a vision competition hosted by a workshop at the <i>2018 IEEE Conference on Big Data</i>.
 				</p>
 				<p>
 					The goal of the competion was to detect and localize instances of road damage in images.
-					I taught myself deep-learning and pytorch, trained my model, wrote a report, and submitted my results.
+					I taught myself deep-learning and PyTorch, trained my model, wrote a report, and submitted my results.
 					I placed 10th overall in the competition and my report was accepted by the workshop's reviewers (not bad for an undergrad working alone).
-					Unfortunetly, I was unable to attend the conference and my report went unpublished, but hey, I was just happy it got accepted.
+					Unfortunately, I was unable to attend the conference and my report went unpublished, but hey, I was just happy it got accepted.
 				</p>
 				<p>
-					My senior year, my capstone project team deployed my model to an iOS app that
+					My senior year, my capstone project team and I deployed my model to an iOS app that
 					automatically reports road damage.
 					The model runs locally on a mobile device and is used to capture images of road damage and
-					store them and their gps coordinates to a remote database.
+					store them and their gps coordinates to a remote service.
 					The idea is that municipalities, who currently rely on individual reports and
 					hired experts, could mount smartphones to fleets of vehicles to
 					passivly and automatically locate and report road damage within their jurisdiction.
