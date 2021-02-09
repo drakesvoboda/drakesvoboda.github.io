@@ -1,0 +1,39 @@
+@import "../color/lib";
+
+.social {
+    position: fixed;
+    right: pxtovw(35);
+    bottom: 0;
+
+
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 50%;
+        bottom: 0;
+        width: 1px;
+        height: pxtovw(85);
+        background-color: $text-color;
+    }
+
+    ul {
+        padding-bottom: pxtovw(100);
+
+        li {
+            padding: 0 0;
+        }
+    }
+
+    a {
+        color: $text-color;
+        display: block;
+        padding: pxtoem(15);
+        transition: all .2s linear;
+
+        @include hover {
+            color: $text-accent;
+            transform: translate(0, -5px);
+        }
+    }
+}

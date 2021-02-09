@@ -15,6 +15,11 @@
 	left: 50%;
 	transform: translate(0, -50%);
 	padding: pxtoem(50) pxtoem(100) pxtoem(50);
+	display: none;
+
+	@media (min-width: $lg) {
+		display: block;
+	}
 
 	.tooltip {
 		margin: 0 0 pxtoem(50);
