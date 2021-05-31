@@ -32,9 +32,8 @@
 				<p class="meta">Hi, my name is</p>
 				<h1>Drake Svoboda</h1>
 				<p style="max-width: 33em;">
-					I'm a software engineer based in Detroit and
-					a master's student at the <a href="https://umich.edu/">University of Michigan</a> (go blue!).
-					I have six years work experience in web-development and am intereseted in applying machine learning to real world problems.
+					I'm a AI research specialist at <a href="https://www.ford.com/">Ford Motor Company</a> and am intereseted 
+					in applying machine learning to real world problems.
 				</p>
 			</header>
 		</div>
@@ -62,16 +61,14 @@
 			<h2>
 				About Me
 			</h2>
-			<p>			
-				I graduated from <a href="https://wayne.edu/">Wayne State University</a> in 2015 with a bachelor's in computer science and a minor in mathematics.
-				Since then I've been pursuing a master's in comp-sci from the <a href="https://umich.edu/">University of Michigan</a>.	
-				I have taken graduate level courses covering large scale distributed systems, compilers, artifical intelligence, machine learning, 
-				computer vision, and nautral language processing.
-				My academic experiences have allowed me to work on a wide variety of software and machine learning projects.		
+			<p>	
+				In April of 2021 I graduated from the <a href="https://umich.edu/">University of Michigan</a> with a master's degree in computer science (go blue!).		
+				In 2018 I graduated from <a href="https://wayne.edu/">Wayne State University</a> with a bachelor's in computer science and a minor in mathematics.	
+				In school I studied a wide range of topics including distributed systems, compilers, systems for AI, machine learning, computer vision, and nautral language processing.
 			</p>
 			<p>
-				Throughout my college career I've worked in web development at <a href="https://www.thinkmoncur.com/">Moncur</a>.
-				At work I develop beautiful and performant web experiences with teams of developers and designers.
+				Throughout college I worked as a web development with at small agency called <a href="https://www.thinkmoncur.com/">Moncur</a>.
+				I'm currently a cognitive computing research specialist at <a href="https://www.ford.com/">Ford Motor Company</a>.
 			</p>
 		</div>
 	</div>
@@ -80,6 +77,49 @@
 			Projects
 		</h2>
 		<div class="portfolio">
+			<section class="portfolio__project">
+				<p class="meta">April. 2021</p>
+				<h3>Communication Efficient Distributed SGD</h3>
+				<ul class="list-inline tags meta text-light-gray">
+					<li>AI</li>
+					<li>Systems</li>
+					<li>PyTorch</li>
+				</ul>
+				<figure class="portfolio__image">
+					<img src="./public/images/StaggeredEASGD.png">
+				</figure>
+				<p>
+					In my final semester at Michigan I took a course called <i>Systems for AI</i>
+					where we studied state-of-the-art software systems for artificial intelligence.
+					Topics included systems for deep learning, machine learning, and reinforcement learning; runtime execution and compilers for AI; 
+					distributed and federated learning systems; serving systems and inference; and scheduling and resource management in AI clusters. 
+				</p>
+				<p>
+					For the final project in the course, my teammate and I studied methods for speeding up distributed SGD training.
+					Additionally, the course held a competition for the fastest code to reach 90% accuracy on the SVHN datasets on a 3 node CPU cluster;
+					my implementation took first place.   
+				</p>
+				<a href="./public/DistributedSGD.pdf" class="link">Read More</a>
+			</section>
+			<section class="portfolio__project">
+				<p class="meta">April. 2021</p>
+				<h3>Image Captioning with Vision Transformers and GPT-2</h3>
+				<ul class="list-inline tags meta text-light-gray">
+					<li>NLP</li>
+					<li>Computer Vision</li>
+					<li>Python</li>
+					<li>PyTorch</li>
+				</ul>
+				<figure class="portfolio__image">
+					<img src="./public/images/ViTCaptioning.jpg">
+				</figure>
+				<p>
+					Transformer architectures started to gain popularity amongst computer vision researchers in late 2020.
+					Researchers from Google Brain released ViT, a visual transformer model that acheives state-of-the-art performance on image classification.
+					I used a pre-trained ViT and GPT-2 language model for image captioning and got good results.
+				</p>
+				<a href="https://colab.research.google.com/drive/1wLOx9aWHAyxMtYKM2Ncggfs0BB1rLkBl?usp=sharing" class="link">Try the Code</a>
+			</section>
 			<section class="portfolio__project">
 				<p class="meta">Dec. 2020</p>
 				<h3>Static Branch Prediction for LLVM IRs Using Machine Learning</h3>
@@ -90,7 +130,7 @@
 					<li>C++</li>
 				</ul>
 				<p>
-					In my compilers class, my team and I trained both classical and deep-learning models to predict the bias of
+					In my compilers class at Michigan, my project team and I trained both classical and deep-learning models to predict the bias of
 					an assembly branch instruction.
 					Compilers rely on accurate branch prediction to make intelligent decisions when optimizing code.
 					Our best model performs better than LLVM's internal branch predictor which we think is a really good result.
@@ -106,7 +146,7 @@
 					<li>PyTorch</li>
 				</ul>
 				<p>
-					For the final project in my natural language processing class, each group was tasked with solving
+					For the final project in my natural language processing class at Michigan, each project team was tasked with solving
 					three natural language inference (NLI) benchmarks:
 				</p>
 				<p>
