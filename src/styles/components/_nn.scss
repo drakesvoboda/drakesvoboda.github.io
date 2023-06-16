@@ -1,0 +1,75 @@
+﻿@import "../util/lib";
+@import "../type/lib";
+@import "../color/lib";
+
+.top-banner {
+	min-height: 75vh;
+	display: flex;
+	align-items: center;
+}
+
+.nn-container {
+	position: absolute;
+	right: pxtoem(50);
+	top: 50%;
+	width: 50%;
+	left: 50%;
+	transform: translate(0, -50%);
+	display: none;
+
+	@media (min-width: $lg) {
+		display: block;
+	}
+
+	.tooltip {
+		margin: 0 0 pxtoem(50);
+		max-width: pxtoem(550);
+		font-size: 14px;
+		position: absolute;
+		top: pxtorem(60);
+		left: pxtorem(95);
+		z-index: 100;
+
+		span {
+			opacity: 0;
+			transition: all .15s;
+			background: $blue;
+			pointer-events: none;
+		}
+
+		@include hover {
+			span {
+				opacity: 0.75;
+				pointer-events: all;
+			}
+		}
+	}
+
+	&__inner {
+		padding-bottom: 70%;
+		height: auto;
+
+		canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+	}
+}
+
+
+#nn {
+	@media (min-width: $xl) {
+		display: block;
+	}
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: -45%;
+	bottom: 0;
+	z-index: 0;
+	display: none;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
 <head>
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
@@ -7,58 +8,68 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Drake Svoboda | Portfolio</title>
 	<link rel="shortcut icon" href="/areas/cms/assets/img/favicon.png" />
-	<meta name="description" content="I'm an AI research specialist at Ford Motor Company and am interested in applying machine learning to real world problems.">
+	<meta name="description"
+		content="I'm an AI research specialist at Ford Motor Company and am interested in applying machine learning to real world problems.">
 
-	<!-- Favicon -->
+	<!-- Favicon 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> -->
 	<meta name="msapplication-TileColor" content="#ffffff">
-
-	<link rel="stylesheet" href="./Build/styles/vendor.css" />
-	<link rel="stylesheet" href="./Build/styles/main.css" />
 </head>
-<body>	
+
+<body>
+	<!---->
+	<div id="nn"></div>
+
 	<div class="social">
 		<ul class="list-unstyled">
 			<li><a href="https://github.com/drakesvoboda"><span class="fab fa-github"></span></a></li>
 			<li><a href="https://www.linkedin.com/in/drakesvoboda/"><span class="fab fa-linkedin-in"></span></a></li>
 		</ul>
 	</div>
-	<div class="banner top-banner relative">
+	<div class="banner top-banner relative" style="z-index: 10;">
 		<div class="container">
 			<header>
 				<p class="meta">Hi, my name is</p>
 				<h1>Drake Svoboda</h1>
 				<p style="max-width: 33em;">
-					I'm an AI research specialist at <a href="https://www.ford.com/">Ford Motor Company</a> and am interested 
-					in applying machine learning to real world problems.
+					I'm an AI/ML research specialist @ <a href="https://www.ford.com/">Ford Motor Company</a>.
+					I'm interested in applying machine learning to real world problems.
 				</p>
 			</header>
 		</div>
-		<div class="nn-container">
-			<div class="nn-container__inner w-100 relative">
-				<canvas id="nn"></canvas>
-			</div>
-		</div>
 	</div>
-	<div class="container">
-		<div style="max-width:45em">	
+	<div class="container relative" style="z-index: 1;">
+		<div style="max-width:45em">
 			<h2>
 				About Me
 			</h2>
-			<p>	
-				In April of 2021 I graduated from the <a href="https://umich.edu/">University of Michigan</a> with a master's degree in computer science (go blue!).		
-				In 2018 I graduated from <a href="https://wayne.edu/">Wayne State University</a> with a bachelor's in computer science and a minor in mathematics.	
-				In school I studied a wide range of topics including distributed systems, compilers, systems for AI, machine learning, computer vision, and natural language processing.
+			<p>
+				AI/ML specialist / software engineer / web developer
 			</p>
 			<p>
-				Throughout college I worked as a web developer at an agency called <a href="https://www.thinkmoncur.com/">Moncur</a>.
-				I'm currently a cognitive computing research specialist at <a href="https://www.ford.com/">Ford Motor Company</a>.
+				My interests include software engineering, machine learning, natural language processing, computer
+				vision, and UI design &amp; development.
+			</p>
+			<p>
+				<strong><a href="https://umich.edu/">University of Michigan</a></strong> (go blue!)<br />
+				Master's of Engineering in Computer Science
+			</p>
+			<p>
+				<strong><a href="https://wayne.edu/">Wayne State University</a></strong><br />
+				Bachelor's of Science in Computer Science - Minor in Mathematics
+			</p>
+			<p>
+				Through college I worked as a web developer at <a href="https://www.thinkmoncur.com/">Moncur</a>.
+			</p>
+			<p>
+				Currently, I'm an AI/ML research specialist at <a href="https://www.ford.com/">Ford Motor Company</a>
+				focused on natural language processing and generative models.
 			</p>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container relative" style="z-index: 1;">
 		<h2>
 			Projects
 		</h2>
@@ -72,20 +83,24 @@
 					<li>PyTorch</li>
 				</ul>
 				<figure class="portfolio__image">
-					<img src="./public/images/StaggeredEASGD.png">
+					<img src="/images/StaggeredEASGD.png">
 				</figure>
 				<p>
 					In my final semester at Michigan I took a course called <i>Systems for AI</i>
 					where we studied state-of-the-art software systems for artificial intelligence.
-					Topics included systems for deep learning, machine learning, and reinforcement learning; runtime execution and compilers for AI; 
-					distributed and federated learning systems; serving systems and inference; and scheduling and resource management in AI clusters. 
+					Topics included systems for deep learning, machine learning, and reinforcement learning; runtime
+					execution and compilers for AI;
+					distributed and federated learning systems; serving systems and inference; and scheduling and
+					resource management in AI clusters.
 				</p>
 				<p>
-					For the final project in the course, my teammate and I studied methods for speeding up distributed SGD training.
-					Additionally, the course held a competition for the fastest code to reach 90% accuracy on the SVHN datasets on a 3 node CPU cluster;
-					my implementation took first place.   
+					For the final project in the course, my teammate and I studied methods for speeding up distributed
+					SGD training.
+					Additionally, the course held a competition for the fastest code to reach 90% accuracy on the SVHN
+					datasets on a 3 node CPU cluster;
+					my implementation took first place.
 				</p>
-				<a href="./public/DistributedSGD.pdf" class="link">Read More</a>
+				<a href="/DistributedSGD.pdf" class="link">Read More</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">April. 2021</p>
@@ -97,15 +112,18 @@
 					<li>PyTorch</li>
 				</ul>
 				<figure class="portfolio__image">
-					<img src="./public/images/ViTCaptioning.jpg">
+					<img src="/images/ViTCaptioning.jpg">
 				</figure>
 				<p>
-					Transformer architectures rapidly overtook RNNs as the state-of-the-art model of choice in NLP. 
-					In late 2020, transformers started to gain popularity among computer vision researchers; 
-					Google Brain released ViT, a visual transformer model that achieves state-of-the-art performance on image classification.
-					I fine-tuned an encoder-decoder transformer using a ViT encoder and GPT-2 decoder for image captioning.
+					Transformer architectures rapidly overtook RNNs as the state-of-the-art model of choice in NLP.
+					In late 2020, transformers started to gain popularity among computer vision researchers;
+					Google Brain released ViT, a visual transformer model that achieves state-of-the-art performance on
+					image classification.
+					I fine-tuned an encoder-decoder transformer using a ViT encoder and GPT-2 decoder for image
+					captioning.
 				</p>
-				<a href="https://colab.research.google.com/drive/1wLOx9aWHAyxMtYKM2Ncggfs0BB1rLkBl?usp=sharing" class="link">Try the Code</a>
+				<a href="https://colab.research.google.com/drive/1wLOx9aWHAyxMtYKM2Ncggfs0BB1rLkBl?usp=sharing"
+					class="link">Try the Code</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Dec. 2020</p>
@@ -117,12 +135,13 @@
 					<li>C++</li>
 				</ul>
 				<p>
-					In my compilers class at Michigan, my project team and I trained both classical and deep-learning models to predict the bias of
+					In my compilers class at Michigan, my project team and I trained both classical and deep-learning
+					models to predict the bias of
 					an assembly branch instruction.
 					Compilers rely on accurate branch prediction to make intelligent decisions when optimizing code.
 					Our best model performs better than LLVM's internal branch predictor.
 				</p>
-				<a href="./public/StaticBranchPrediction.pdf" class="link">Read More</a>
+				<a href="/StaticBranchPrediction.pdf" class="link">Read More</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Dec. 2020</p>
@@ -133,7 +152,8 @@
 					<li>PyTorch</li>
 				</ul>
 				<p>
-					For the final project in my natural language processing class at Michigan, each project team was tasked with solving
+					For the final project in my natural language processing class at Michigan, each project team was
+					tasked with solving
 					three natural language inference (NLI) benchmarks:
 				</p>
 				<p>
@@ -141,23 +161,28 @@
 					the correct answer out of 5 multiple-choice options
 				</p>
 				<p>
-					<strong class="text-white">Conversational Entailment</strong>&mdash;given a short dialoge between
+					<strong class="text-white">Conversational Entailment</strong>&mdash;given a short dialogue between
 					speakers, determine if a given hypothesis can
 					be inferred from the dialog.
 				</p>
 				<p>
-					<strong class="text-white">Everyday Actions Text (EAT)</strong>&mdash;determine if a short story is plausible,
+					<strong class="text-white">Everyday Actions Text (EAT)</strong>&mdash;determine if a short story is
+					plausible,
 					and if it isn't, determine when the story stops making sense.
 				</p>
 				<p>
-					Natural language inference is a notoriously difficult problem that requires machines to reason about the meanings of language.
-					Deep-learning has been a huge breakthrough in NLP research and has advanced the state-of-the-art for NLI.
-					My group and I used large transformer models on these benchmarks and&mdash;out of twenty-five teams in the class&mdash;performed fifth best on the Conversational Entailment
+					Natural language inference is a notoriously difficult problem that requires machines to reason about
+					the meanings of language.
+					Deep-learning has been a huge breakthrough in NLP research and has advanced the state-of-the-art for
+					NLI.
+					My group and I used large transformer models on these benchmarks and&mdash;out of twenty-five teams
+					in the class&mdash;performed fifth best on the Conversational Entailment
 					benchmark and third best on the EAT benchmark.
 				</p>
-				<a href="./public/NLI.pdf" class="link">Read More</a>
+				<a href="/NLI.pdf" class="link">Read More</a>
 				<span class="inline-spacer"></span>
-				<a href="https://colab.research.google.com/drive/1t9XKMNCDIopco_6b3UkkyrjMyaRw0tf6?usp=sharing" class="link">Try the Code</a>
+				<a href="https://colab.research.google.com/drive/1t9XKMNCDIopco_6b3UkkyrjMyaRw0tf6?usp=sharing"
+					class="link">Try the Code</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Sep. 2020</p>
@@ -169,10 +194,10 @@
 					<li>OpenMPI</li>
 				</ul>
 				<figure class="portfolio__image">
-					<img src="./public/images/RLQWOP.png">
+					<img src="/images/RLQWOP.png">
 				</figure>
 				<p>
-					A friend of mine is really good at <a href="http://www.foddy.net/Athletics.html">QWOP</a>: 
+					A friend of mine is really good at <a href="http://www.foddy.net/Athletics.html">QWOP</a>:
 					a video game where you control a sprinter's legs to run a 100 meter dash.
 					He is so good that he's ranked within the top ten globally.
 					I wanted to beat him&mdash;but I'm terrible at the game.
@@ -193,17 +218,21 @@
 					<li>PyTorch</li>
 				</ul>
 				<figure class="portfolio__image">
-					<img src="./public/images/EmojAI.png">
+					<img src="/images/EmojAI.png">
 				</figure>
 				<p>
-					In my second semester at Michigan, I took a special topics class called <i>Applied Machine Learning for Affective Computing</i>.
-					In the class we used machine learning techniques to process natural language, recognize speech, and understand and predict human emotions.
+					In my second semester at Michigan, I took a special topics class called <i>Applied Machine Learning
+						for Affective Computing</i>.
+					In the class we used machine learning techniques to process natural language, recognize speech, and
+					understand and predict human emotions.
 					What better encapsulates the full range of human emotion than emojis?
-					For my final project I trained a model to predict what emojis should be used in a natural language input.
+					For my final project I trained a model to predict what emojis should be used in a natural language
+					input.
 				</p>
-				<a href="./public/EmojAI.pdf" class="link">Read More</a>
+				<a href="/EmojAI.pdf" class="link">Read More</a>
 				<span class="inline-spacer"></span>
-				<a href="https://colab.research.google.com/drive/1Hdu2arTC1uSldsvyqZ9Jf92M-z4veg3I?usp=sharing" class="link">Try the Code</a>
+				<a href="https://colab.research.google.com/drive/1Hdu2arTC1uSldsvyqZ9Jf92M-z4veg3I?usp=sharing"
+					class="link">Try the Code</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Apr. 2020</p>
@@ -214,16 +243,19 @@
 					<li>PyTorch</li>
 				</ul>
 				<figure class="portfolio__image">
-					<img src="./public/images/PWC-Net.png">
+					<img src="/images/PWC-Net.png">
 				</figure>
 				<p>
-					Optical flow estimation is the process of estimating pixel-wise motion between consecutively captured images.
-					For the final project in my computer vision class, my group and I implemented and trained a large deep-learning model to estimate 
-					optical flow in images captured during every-day driving scenarios. 
+					Optical flow estimation is the process of estimating pixel-wise motion between consecutively
+					captured images.
+					For the final project in my computer vision class, my group and I implemented and trained a large
+					deep-learning model to estimate
+					optical flow in images captured during every-day driving scenarios.
 				</p>
-				<a href="./public/PWC-Net.pdf" class="link">Read More</a>
+				<a href="/PWC-Net.pdf" class="link">Read More</a>
 				<span class="inline-spacer"></span>
-				<a href="https://colab.research.google.com/drive/1ojZnJlTLl3sZGZyR4nUcQx1367AVubal?usp=sharing" class="link">Try the Code</a>
+				<a href="https://colab.research.google.com/drive/1ojZnJlTLl3sZGZyR4nUcQx1367AVubal?usp=sharing"
+					class="link">Try the Code</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Dec. 2019</p>
@@ -233,16 +265,18 @@
 					<li>Dafny</li>
 				</ul>
 				<figure class="portfolio__image">
-					<img src="./public/images/2.5PC.png">
+					<img src="/images/2.5PC.png">
 				</figure>
 				<p>
 					Atomic commitment is a fundamental problem in distributed systems.
-					There are two popular protocols for atomic commitment: 2 phase commit (2PC) and 3 phase commit (3PC).
+					There are two popular protocols for atomic commitment: 2 phase commit (2PC) and 3 phase commit
+					(3PC).
 					2PC is faster than 3PC, however, its progress can be blocked under certain failure scenarios.
-					For the final project in my distributed systems course, my group and I invented 2.5 phase commit, an atomic commit protocol that is non-blocking 
-					like 3PC but only requires the same number of message passing round trips as 2PC.	
+					For the final project in my distributed systems course, my group and I invented 2.5 phase commit, an
+					atomic commit protocol that is non-blocking
+					like 3PC but only requires the same number of message passing round trips as 2PC.
 				</p>
-				<a href="./public/2_5_PC.pdf" class="link">Read More</a>
+				<a href="/2_5_PC.pdf" class="link">Read More</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Dec. 2019</p>
@@ -254,18 +288,22 @@
 					<li>PyTorch</li>
 				</ul>
 				<figure class="portfolio__image">
-					<img src="./public/images/TripletReg.png">
+					<img src="/images/TripletReg.png">
 				</figure>
 				<p>
 					I took a machine learning course my first semester at Michigan.
-					In the class we covered the theoretical and mathematical foundations of several machine learning algorithm.
-					For the final project in the course, my project group and I investigated a novel method for regularizing 
+					In the class we covered the theoretical and mathematical foundations of several machine learning
+					algorithm.
+					For the final project in the course, my project group and I investigated a novel method for
+					regularizing
 					neural nets that applies a triplet loss term at intermediate hidden layers.
 					The regularization term induces large margins in the hidden states of a neural-net.
-					We found that our method improved both generalization performance and robustness to adversarial examples on the MNIST and CIFAR-10 datasets.
-					We presented our method at a poster session featuring other projects from the course and our project won first prize for the open-ended project track.
+					We found that our method improved both generalization performance and robustness to adversarial
+					examples on the MNIST and CIFAR-10 datasets.
+					We presented our method at a poster session featuring other projects from the course and our project
+					won first prize for the open-ended project track.
 				</p>
-				<a href="./public/TripletReg.pdf" class="link">Read More</a>
+				<a href="/TripletReg.pdf" class="link">Read More</a>
 			</section>
 			<section class="portfolio__project">
 				<p class="meta">Dec. 2018</p>
@@ -277,26 +315,31 @@
 					<li>React</li>
 				</ul>
 				<p>
-					I became interested in machine learning as a junior in college. 
-					I asked one of my professors and mentors (Dr. Shiyong Lu) if he knew of any interesting projects 
+					I became interested in machine learning as a junior in college.
+					I asked one of my professors and mentors (Dr. Shiyong Lu) if he knew of any interesting projects
 					I could work on to learn more about the topic.
-					He pointed me towards a vision competition hosted by a workshop at the <i>2018 IEEE Conference on Big Data</i>.
+					He pointed me towards a vision competition hosted by a workshop at the <i>2018 IEEE Conference on
+						Big Data</i>.
 				</p>
 				<p>
 					The goal of the competition was to detect and localize instances of road damage in images.
-					I taught myself deep-learning and PyTorch, trained my model, wrote a report, and submitted my results.
-					I placed 10th overall in the competition and my report was accepted by the workshop's reviewers (not bad for an undergrad working alone).
-					Unfortunately, I was unable to attend the conference and my report went unpublished, but hey, I was happy it got accepted.
+					I taught myself deep-learning and PyTorch, trained my model, wrote a report, and submitted my
+					results.
+					I placed 10th overall in the competition and my report was accepted by the workshop's reviewers (not
+					bad for an undergrad working alone).
+					Unfortunately, I was unable to attend the conference and my report went unpublished, but hey, I was
+					happy it got accepted.
 				</p>
 				<p>
 					My senior year, I lead a capstone project team that deployed my model to an iOS app.
 					The model runs locally on device and is used to detect and report road damage a remote service.
 				</p>
-				<a href="./public/roaddamage.pdf" class="link">Read More</a>
+				<a href="/roaddamage.pdf" class="link">Read More</a>
 			</section>
 		</div>
 	</div>
 
-	<script src="./Build/js/app.js"></script>
+	<script type="module" src="/main.js"></script>
 </body>
+
 </html>

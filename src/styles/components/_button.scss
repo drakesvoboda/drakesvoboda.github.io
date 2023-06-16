@@ -1,0 +1,145 @@
+@import "../color/lib";
+@import "../util/lib";
+@import "../type/lib";
+
+.btn {
+  @include font-size(-1);
+  display: inline-block;
+  padding: pxtoem(12) pxtoem(50);
+  margin-bottom: 0;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border-radius: 0.2rem;
+  background: transparent;
+  text-decoration: none;
+  transition: all .15s;
+  border: 2px solid;
+  text-decoration: none;
+
+  @include hover {
+    text-decoration: none;
+  }
+
+  &.bg {
+    @include colors {
+      @if $color ==$green or $color ==$light-green {
+        color: $blue;
+      }
+
+      @elseif $color ==$gray or $color ==$dark-gray {
+        color: $light-green;
+      }
+
+      @else {
+        color: choose-contrast-color($color);
+      }
+
+      background: $color;
+      border-color: $color;
+
+      @include hover {
+        background-color: darken($color, 5%) !important;
+        border-color: darken($color, 5%) !important;
+        color: choose-contrast-color(darken($color, 10%)) !important;
+      }
+    }
+  }
+
+  &.text {
+    @include colors {
+      transition: all .25s;
+      color: $color;
+
+      @include hover {
+        @if $color ==$green {
+          background-color: $light-green;
+          border-color: $light-green;
+          color: $blue !important;
+        }
+
+        @else {
+          background-color: $color;
+          border-color: $color;
+          color: choose-contrast-color($color) !important;
+        }
+      }
+    }
+  }
+
+  i {
+    font-weight: 400;
+    margin-left: 5px;
+  }
+
+  &--small {
+    padding: pxtoem(10) pxtoem(30);
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: pxtoem(1);
+  }
+
+  &--alt {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: pxtoem(1);
+    padding: pxtoem(10) pxtoem(40);
+  }
+}
+
+.link {
+  @include font-size(-1);
+  font-family: $font-mono;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  padding: 0 pxtoem(30) 0 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: $text-accent;
+
+  &:after {
+    content: '\f178';
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-2px, -50%);
+    transition: all .15s;
+    color: inherit;
+  }
+
+  @include hover {
+    text-decoration: none;
+
+    &:after {
+      transform: translate(3px, -50%);
+    }
+  }
+
+  &--left {
+    padding: 0 0 0 pxtoem(30);
+
+    &:after {
+      content: "\f177";
+      font-family: "Font Awesome 6 Free";
+      right: unset;
+      left: 0;
+      transform: translate(5px, -50%);
+    }
+  }
+}

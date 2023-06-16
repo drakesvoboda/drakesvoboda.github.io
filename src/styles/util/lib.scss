@@ -1,0 +1,317 @@
+﻿@function pxtovh($val, $context: 1080) {
+  @if (unitless($val)) {
+    $val: $val * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $val / $context * 100vh;
+}
+
+@function pxtovw($val, $context: 1920) {
+  @if (unitless($val)) {
+    $val: $val * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $val / $context * 100vw;
+}
+
+@mixin absolute-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-cover() {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin margin-center() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin caret-up($width, $height) {
+  content: '';
+  display: block;
+  width: $width;
+  height: $height;
+  border-bottom: ($height / 2) solid;
+  border-left: ($width / 2) solid transparent;
+  border-right: ($width / 2) solid transparent;
+}
+
+@mixin caret-down($width, $height) {
+  content: '';
+  display: block;
+  width: $width;
+  height: $height;
+  border-top: ($height / 2) solid;
+  border-right: ($width / 2) solid transparent;
+  border-bottom: none;
+  border-left: ($width / 2) solid transparent;
+}
+
+@mixin caret-right($width, $height) {
+  content: '';
+  display: block;
+  width: $width;
+  height: $height;
+  border-top: ($height / 2) solid transparent;
+  border-left: ($width / 2) solid;
+  border-bottom: ($height / 2) solid transparent;
+  border-right: none;
+}
+
+@mixin caret-left($width, $height) {
+  content: '';
+  display: block;
+  width: $width;
+  height: $height;
+  border-top: ($height / 2) solid transparent;
+  border-right: ($width / 2) solid;
+  border-bottom: ($height / 2) solid transparent;
+  border-left: none;
+  z-index: 20;
+}
+
+@mixin caret-bottom-left($color, $size) {
+  content: '';
+  display: block;
+  width: $size;
+  height: $size;
+  border-top: ($size / 2) solid transparent;
+  border-left: ($size / 2) solid $color;
+  border-bottom: ($size / 2) solid $color;
+  border-right: ($size / 2) solid transparent;
+}
+
+@mixin psuedo-x($size, $thickness) {
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    height: ($size * 1.41421);
+    border-left: $thickness solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  &:before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  display: inline-block;
+  position: relative;
+  width: $size;
+  height: $size;
+}
+
+@mixin psuedo-plus($size, $thickness) {
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    height: $size;
+    border-left: $thickness solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  &:before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%);
+  }
+
+  display: inline-block;
+  position: relative;
+  width: $size;
+  height: $size;
+}
+
+@mixin psuedo-minus($size, $thickness) {
+  &:before {
+    content: '';
+    display: block;
+    width: $size;
+    border-top: $thickness solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  &:before {
+    transform: translate(-50%, -50%);
+  }
+
+  display: inline-block;
+  position: relative;
+  width: $size;
+  height: $size;
+}
+
+@mixin hover($added-selector: "") {
+
+  &:hover,
+  &:focus,
+  &:active,
+  #{$added-selector},
+  &.hover {
+    @content;
+  }
+}
+
+@mixin clearfix() {
+
+  &:before,
+  &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@mixin invisible() {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+  z-index: 12;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+@mixin arrow($size, $thickness) {
+  content: '';
+  display: inline-block;
+  width: $size;
+  height: $size;
+  border-right: $thickness solid;
+  border-bottom: $thickness solid;
+}
+
+@mixin arrow-up($size, $thickness) {
+  @include arrow($size, $thickness);
+  transform: rotate(-135deg);
+}
+
+@mixin arrow-down($size, $thickness) {
+  @include arrow($size, $thickness);
+  transform: rotate(45deg);
+}
+
+@mixin arrow-left($size, $thickness) {
+  @include arrow($size, $thickness);
+  transform: rotate(135deg);
+}
+
+@mixin arrow-right($size, $thickness) {
+  @include arrow($size, $thickness);
+  transform: rotate(-45deg);
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+@mixin autofill {
+  @include optional-at-root(':-webkit-autofill') {
+    @content;
+  }
+}
+
+@mixin icon($icon, $weight: "far") {
+  @extend .fa-#{$icon}, :before;
+  @extend .#{$weight};
+  vertical-align: inherit;
+}
+
+@function asset-path($path) {
+  @return "../assets/#{$path}"
+}
+
+@function img-path($path) {
+  @return asset-path("img/#{$path}")
+}
+
+@function font-path($path) {
+  @return asset-path("font/#{$path}")
+}
+
+@function img-url($path){
+@return url('#{img-path($path)}')
+}
+
+$bar-width: pxtorem(85);
+
+@mixin loading {
+  $selector: '#{&}';
+
+  @at-root {
+    body.loading {
+      #{$selector} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin loaded {
+  $selector: '#{&}';
+
+  @at-root {
+    body.loaded {
+      #{$selector} {
+        @content;
+      }
+    }
+  }
+}
