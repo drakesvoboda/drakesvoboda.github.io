@@ -182,10 +182,30 @@ button.blank {
   }
 }
 
+ul {
+  list-style-type: none;
+
+  li {
+    position: relative;
+  }
+
+  li:before {
+    content: "–"; /* en dash */
+    position: absolute;
+    opacity: .6;
+    margin-left: -1em; 
+  }
+}
+
 .list-unstyled {
   list-style: none;
   padding-left: 0;
   margin-bottom: 0;
+  
+  li:before {
+    content: "";
+    display: none;
+  }
 }
 
 hr {
