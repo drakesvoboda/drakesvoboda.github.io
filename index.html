@@ -83,21 +83,28 @@
 					A follow-up to an old project of mine (<a href="#using-rl-to-beat-qwop">see below</a>): back in
 					2020 I trained a reinforcement-learning agent to play <a
 						href="http://www.foddy.net/Athletics.html">QWOP</a>, a video game where you control a
-					sprinter's legs to run a 100 meter dash.
-					The agent could finish the race, but nowhere near competitively.
+					sprinter's legs to run a 100 meter dash. The agent could finish the race, but wasn't very fast.
 				</p>
 				<p>
-					Six years and a lot of late nights later, it's superhuman. The two changes that actually mattered:
-					rewarding the agent for a genuine alternating stride before ever rewarding it for speed (otherwise
-					PPO finds a faster-looking knee-sliding skate instead of a run), and instrumenting the game itself
-					to let Python drive its physics loop directly instead of a real browser clock&mdash;more stable
-					training signal, and parallel rollouts no longer bottlenecked by real time. Evaluated against the
+					I revisited the project and was able to train an agent to complete the 100m faster than the <a
+						href="https://www.speedrun.com/qwop">fastest
+						recorded human time</a> of 45.53 seconds (at the time of writing).
+				</p>
+				<p>
+					The two changes that dramatically improved the agent's speed were
+					1) rewarding the agent for an alternating stride before rewarding it for speed
+					(otherwise PPO finds a knee-sliding skate and never learns a gait), and 2) instrumenting
+					the game to let Python drive its physics loop directly instead of a real browser
+					clock&mdash;parallel rollouts are no longer bottlenecked by real time (thank you claude code).
+				</p>
+				<p>
+					Evaluated against the
 					game's own real, unmodified physics and timing, my agent now runs the 100m dash in
-					<strong class="text-white">45.2 seconds</strong>&mdash;faster than the fastest human time on
-					record, <a href="https://www.speedrun.com/qwop">45.53 seconds</a>. Here it is setting the time:
+					<strong class="text-white">45.2 seconds</strong>.
 				</p>
 				<figure class="portfolio__video">
-					<video src="/videos/qwop-world-record.mp4" poster="/images/qwop-finish.jpg" controls preload="metadata"></video>
+					<video poster="/images/qwop-finish.jpg" src="/videos/qwop-world-record.mp4" controls
+						preload="metadata"></video>
 				</figure>
 				<a href="https://github.com/drakesvoboda/RL-QWOP" class="link">Try the Code</a>
 			</section>
@@ -358,8 +365,8 @@
 					happy it got accepted.
 				</p>
 				<p>
-					My senior year, I lead a capstone project team that deployed my model to an iOS app.
-					The model runs locally on device and is used to detect and report road damage a remote service.
+					My senior year, I led a capstone project team that deployed my model to an iOS app.
+					The model runs locally on device and is used to detect and report road damage to a remote service.
 				</p>
 				<a href="/roaddamage.pdf" class="link">Read More</a>
 			</section>
