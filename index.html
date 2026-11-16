@@ -73,6 +73,37 @@
 		</h2>
 		<div class="portfolio">
 			<section class="portfolio__project">
+				<p class="meta">Nov. 2026</p>
+				<h3>Superhuman QWOP Agent</h3>
+				<ul class="list-inline tags meta text-light-gray">
+					<li>Reinforcement Learning</li>
+					<li>Python</li>
+					<li>PyTorch</li>
+					<li>Selenium</li>
+				</ul>
+				<p>
+					A follow-up to an old project of mine (<a href="#using-rl-to-beat-qwop">see below</a>): back in
+					2020 I trained a reinforcement-learning agent to play <a
+						href="http://www.foddy.net/Athletics.html">QWOP</a>, a video game where you control a
+					sprinter's legs to run a 100 meter dash.
+					The agent could finish the race, but nowhere near competitively.
+				</p>
+				<p>
+					Six years and a lot of late nights later, it's superhuman. The two changes that actually mattered:
+					rewarding the agent for a genuine alternating stride before ever rewarding it for speed (otherwise
+					PPO finds a faster-looking knee-sliding skate instead of a run), and instrumenting the game itself
+					to let Python drive its physics loop directly instead of a real browser clock&mdash;more stable
+					training signal, and parallel rollouts no longer bottlenecked by real time. Evaluated against the
+					game's own real, unmodified physics and timing, my agent now runs the 100m dash in
+					<strong class="text-white">45.2 seconds</strong>&mdash;faster than the fastest human time on
+					record, <a href="https://www.speedrun.com/qwop">45.53 seconds</a>. Here it is setting the time:
+				</p>
+				<figure class="portfolio__video">
+					<video src="/videos/qwop-world-record.mp4" controls preload="metadata"></video>
+				</figure>
+				<a href="https://github.com/drakesvoboda/RL-QWOP" class="link">Try the Code</a>
+			</section>
+			<section class="portfolio__project">
 				<p class="meta">April. 2021</p>
 				<h3>Communication Efficient Distributed SGD</h3>
 				<ul class="list-inline tags meta text-light-gray">
@@ -182,8 +213,8 @@
 				<a href="https://colab.research.google.com/drive/1t9XKMNCDIopco_6b3UkkyrjMyaRw0tf6?usp=sharing"
 					class="link">Try the Code</a>
 			</section>
-			<section class="portfolio__project">
-				<p class="meta">Sep. 2020 &ndash; Nov. 2026</p>
+			<section class="portfolio__project" id="using-rl-to-beat-qwop">
+				<p class="meta">Sep. 2020</p>
 				<h3>Using RL to beat QWOP</h3>
 				<ul class="list-inline tags meta text-light-gray">
 					<li>Reinforcement Learning</li>
@@ -203,18 +234,8 @@
 				</p>
 				<p>
 					I trained my computer to beat the game using an algorithm called Proximal Policy Optimization.
-					At the time, my computer could beat the game, but it wasn't faster than my friend.
+					My computer can beat the game, but it isn't faster than my friend.
 				</p>
-				<p>
-					Six years and a lot of late nights later, it finally is. After reworking the reward function,
-					adding a proper footstep-based gait detector so the policy can't cheat its way to a fast time with
-					a sliding, non-alternating gait, and switching evaluation over to the game's own real,
-					unmodified physics and timing (instead of an approximation of it), my policy now runs the 100m
-					dash faster than any human ever has&mdash;it holds the world record. Here it is beating the time:
-				</p>
-				<figure class="portfolio__video">
-					<video src="/videos/qwop-world-record.mp4" controls preload="metadata"></video>
-				</figure>
 				<a href="https://github.com/drakesvoboda/RL-QWOP" class="link">Try the Code</a>
 			</section>
 			<section class="portfolio__project">
