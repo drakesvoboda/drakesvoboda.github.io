@@ -52,4 +52,19 @@
 			background: rgba(darken($yellow, 20%), .2);
 		}
 	}
+
+	// Same card treatment as &__image, minus the color-tint overlay (which would sit
+	// on top of the native <video> controls and block clicks on them).
+	&__video {
+		box-shadow: pxtoem(5) pxtoem(5) pxtoem(10) pxtoem(10) rgba($black, .35);
+		border-radius: pxtoem(4);
+		overflow: hidden;
+		margin: 1em 0 1.5rem;
+		max-width: 75%;
+
+		video {
+			width: 100%;
+			display: block;
+		}
+	}
 }
